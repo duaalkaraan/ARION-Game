@@ -1,1 +1,2 @@
 # ARION-Game
+Bu proje, ana karakter Arion’un korsanlar tarafından kaçırılan arkadaşı Rafi’yi kurtarmak için limandaki engelleri aşmasını, gerekli materyalleri toplamasını ve düşman gemisine sızarak hedefine ulaşmasını konu alan bir platform oyunudur. Oyuncu, platformlar üzerinde ilerlerken tuzakları atlatmalı ve bombaları stratejik bir şekilde kullanarak düşman birimlerini kontrol altına almalıdır.
