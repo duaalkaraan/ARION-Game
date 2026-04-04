@@ -40,7 +40,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &9010000000000000003
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -51,10 +51,16 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -67,6 +73,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9010000000000000001}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -90,18 +97,18 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.59375, y: 1.71875}
+    newSize: {x: 1.59375, y: 1.71875}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.42, y: 0.88}
   m_EdgeRadius: 0
 --- !u!212 &9010000000000000005
@@ -121,6 +128,11 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -142,6 +154,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
@@ -150,7 +163,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.59375, y: 1.71875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -203,9 +216,17 @@ MonoBehaviour:
     m_Bits: 4294967295
   groundCheckDistance: 0.14
   groundCheckOffset: {x: 0, y: 0}
+  locomotionCrossFade: 0.08
   rb: {fileID: 9010000000000000003}
   animator: {fileID: 9010000000000000006}
   spriteRenderer: {fileID: 9010000000000000005}
+  maxHealth: 100
+  startHealth: 100
+  healAmount: 25
+  damageIFrames: 0.25
+  damageFlashTime: 0.12
+  damageFlashColor: {r: 1, g: 0.2, b: 0.2, a: 1}
+  floatingTextDuration: 0.65
 --- !u!114 &9010000000000000008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2e3d4c5b6a79808f9e0d1c2b3a4f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 9300000000000000001, guid: 11223344556677889900aabbccddeeff, type: 3}
+  bombPrefab: {fileID: 2113092143148716433, guid: cb431500fa335ec44b88fda383235a26, type: 3}
   rechargeSeconds: 3
   dropCooldown: 0.25
   dropOffset: {x: 0, y: 0}
@@ -237,4 +258,15 @@ MonoBehaviour:
   dropper: {fileID: 9010000000000000008}
   barRenderer: {fileID: 0}
   worldOffset: {x: 0, y: 1.25, z: 0}
-  chargeSprites: []
+  chargeSprites:
+  - {fileID: -855298285791758126, guid: b2b311f784e15814c81e71620fc311e0, type: 3}
+  - {fileID: 6937817954938267909, guid: 3562a3181bb15ec4a8f1bf8f6eb2b14f, type: 3}
+  - {fileID: -6470460504253458178, guid: 58cf6eb7ee321e440b1cb931bd71d079, type: 3}
+  - {fileID: -4178046375966092550, guid: 6f01e781cf284c34988055ce2d452fe5, type: 3}
+  - {fileID: 4130640169021434097, guid: e60b0659846b5404bb1b4b94bfbf5028, type: 3}
+  - {fileID: 3465286685962602723, guid: f2ec12f51598b2940899294e6a2b12c6, type: 3}
+  - {fileID: 7028616704906629411, guid: 600bcf17f78c1844b9dddcfaeaa78835, type: 3}
+  - {fileID: 8288426215254106694, guid: 07e1db22b4c913548842a70931e0bb3c, type: 3}
+  - {fileID: 4113829005332862926, guid: fabbee102167e684ca19dc3231524351, type: 3}
+  - {fileID: -5099292496197868168, guid: af5ddf42ed53018499f69deded845e91, type: 3}
+  - {fileID: -2966200626249415253, guid: 7e477da92b881634daef9d5b650286e2, type: 3}
