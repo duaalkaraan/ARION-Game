@@ -36,6 +36,7 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
     float idlePatrolTimer;
     bool isPatrollingShortStep;
 
+    // ✔ Enemy bileşenlerini hazırlayan başlangıç metodu
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -49,6 +50,7 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
         isPatrollingShortStep = false;
     }
 
+    // ✔ Enemy’nin ana yapay zekâ döngüsü (görme, takip, saldırı, devriye)
     void FixedUpdate()
     {
         if (dead)
@@ -137,6 +139,7 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
             TryCrossFade("Run", 0.05f);
     }
 
+    // ✔ Oyuncu referansını bulur veya override edilmiş hedefi kullanır
     void EnsurePlayer()
     {
         if (player != null)
@@ -149,6 +152,7 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
             player = FindFirstObjectByType<PlayerMovement2D>();
     }
 
+    // ✔ Oyuncu görünmüyorsa kısa devriye davranışını yönetir
     void HandleIdlePatrol()
     {
         // Küçük idle-patrol: 5–6 saniyede bir yön değiştir, 3–4 adım yürü
@@ -192,6 +196,7 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
         }
     }
 
+    // ✔ Animasyon geçişlerini kontrol eder, gereksiz tekrarları engeller
     void TryCrossFade(string desiredState, float duration)
     {
         if (string.Equals(lastDesiredState, desiredState))
@@ -208,6 +213,7 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
         animator.CrossFade(desiredState, duration, 0);
     }
 
+    // ✔ Enemy’yi öldürme işlemini başlatır
     public void Die()
     {
         if (dead)
@@ -218,6 +224,7 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
             deathRoutine = StartCoroutine(DeathRoutine());
     }
 
+    // ✔ Ölüm animasyonlarını oynatır ve enemy’yi sahneden kaldırır
     IEnumerator DeathRoutine()
     {
         if (rb != null)
@@ -237,4 +244,3 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
         Destroy(gameObject);
     }
 }
-
