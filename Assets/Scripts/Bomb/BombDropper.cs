@@ -18,17 +18,20 @@ public sealed class BombDropper : MonoBehaviour
     public float NormalizedCharge => Mathf.Clamp01(charge01);
     public bool HasBombReady => charge01 >= 1f;
 
+    // ✔ Oyuncu bileşenini bulur ve bomba prefabını otomatik atamayı dener
     void Awake()
     {
         player = GetComponent<PlayerMovement2D>();
         TryAutoAssignBombPrefab();
     }
 
+    // ✔ Editörde değer değişince bomba prefabını otomatik bulmayı dener
     void OnValidate()
     {
         TryAutoAssignBombPrefab();
     }
 
+    // ✔ Bombanın şarj olmasını, tuşa basılmasını ve bomba bırakmayı yönetir
     void Update()
     {
         if (bombPrefab == null)
@@ -36,6 +39,7 @@ public sealed class BombDropper : MonoBehaviour
         if (player != null && player.IsDead)
             return;
 
+        // Bomba şarjını yenile
         if (charge01 < 1f)
             charge01 = Mathf.Min(1f, charge01 + (Time.deltaTime / rechargeSeconds));
 
@@ -43,7 +47,7 @@ public sealed class BombDropper : MonoBehaviour
         if (kb == null)
             return;
 
-        // Bomb drop: E
+        // Bomb drop: E tuşu
         if (!kb.eKey.wasPressedThisFrame)
             return;
 
@@ -54,12 +58,14 @@ public sealed class BombDropper : MonoBehaviour
             return;
         nextDropTime = Time.time + dropCooldown;
 
+        // Bombayı oluştur
         Vector3 pos = transform.position + (Vector3)dropOffset;
         pos.z = 0f;
         Instantiate(bombPrefab, pos, Quaternion.identity);
         charge01 = 0f;
     }
 
+    // ✔ Editörde bomba prefabı atanmadıysa otomatik olarak bulmaya çalışır
     void TryAutoAssignBombPrefab()
     {
         if (bombPrefab != null)
@@ -70,9 +76,9 @@ public sealed class BombDropper : MonoBehaviour
 #endif
     }
 
+    // ✔ Bombayı tamamen doldurur (örneğin checkpoint veya item sonrası)
     public void RefillBombs()
     {
         charge01 = 1f;
     }
 }
-
