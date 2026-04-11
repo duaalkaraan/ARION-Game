@@ -8,8 +8,7 @@ public class KapiCikisi : MonoBehaviour
 
     [SerializeField] string sonrakiSahneAdi = "Level2";
     [SerializeField] float gecisGecikmesi = 1f;
-    [SerializeField] Animator kapiAnimator; // animasyon yoksa boş bırak, sorun olmaz
-
+    [SerializeField] Animator kapiAnimator; 
     public void OpenDoor()
     {
         if (isAcik) return;
