@@ -63,6 +63,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
 
     public bool IsDead => dead;
 
+    // Bileşenleri başlatır, Rigidbody ayarlarını yapar, canı ve spawn pozisyonunu ayarlar
     void Awake()
     {
         rb = rb ? rb : GetComponent<Rigidbody2D>();
@@ -81,6 +82,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         spawnPosition = transform.position;
     }
 
+    // Her karede iFrame sayacını düşürür, H tuşuyla iyileşmeyi ve zıplama buffer'ını yönetir
     void Update()
     {
         if (iFrameTimer > 0f)
@@ -93,7 +95,6 @@ public sealed class PlayerMovement2D : MonoBehaviour
         if (kb == null)
             return;
 
-        // Heal input (H tuşu)
         if (kb.hKey.wasPressedThisFrame)
             Heal(healAmount);
 
@@ -103,6 +104,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
             jumpBufferCounter -= Time.deltaTime;
     }
 
+    // Fizik adımlarını yönetir: zemin kontrolü, hareket, zıplama, yerçekimi ve yön
     void FixedUpdate()
     {
         if (dead)
@@ -124,6 +126,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         UpdateFacing(h);
     }
 
+    // Her kare sonunda doğru animasyon state'ine geçiş yapar
     void LateUpdate()
     {
         if (dead || animator == null)
@@ -137,6 +140,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
             animator.CrossFade(target, locomotionCrossFade, 0);
     }
 
+    // Hit veya ölüm animasyonu oynarken hareket animasyonlarını engeller
     bool AnimatorBlocksLocomotion()
     {
         if (animator.IsInTransition(0))
@@ -150,11 +154,13 @@ public sealed class PlayerMovement2D : MonoBehaviour
         return IsHitOrDeadStateInfo(cur);
     }
 
+    // Verilen animasyon state'inin Hit veya ölüm state'i olup olmadığını kontrol eder
     static bool IsHitOrDeadStateInfo(AnimatorStateInfo info)
     {
         return info.IsName("Hit") || info.IsName("DeadHit") || info.IsName("DeadGround");
     }
 
+    // Animator'ın şu an verilen state'de olup olmadığını kontrol eder
     bool AnimatorIsInOrEnteringState(int stateHash)
     {
         var cur = animator.GetCurrentAnimatorStateInfo(0);
@@ -171,6 +177,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         return false;
     }
 
+    // Hıza ve zemin durumuna göre hangi animasyonun oynanacağını belirler
     int ResolveLocomotionStateHash()
     {
         float vy = rb.linearVelocity.y;
@@ -182,6 +189,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         return Mathf.Abs(rb.linearVelocity.x) > 0.05f ? RunStateHash : IdleStateHash;
     }
 
+    // Klavyeden yatay hareket girdisini okur ve -1 ile 1 arasında döndürür
     float ReadHorizontal()
     {
         var kb = Keyboard.current;
@@ -196,6 +204,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         return Mathf.Clamp(v, -1f, 1f);
     }
 
+    // Ayakların altından Raycast atarak zeminde olup olmadığını kontrol eder
     bool CheckGrounded()
     {
         if (col == null)
@@ -207,6 +216,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         return hit.collider != null;
     }
 
+    // Yatay hareketi ivme ve sürtünmeyle uygular
     void MoveHorizontal(float h)
     {
         float accel = physicsGrounded ? acceleration : airAcceleration;
@@ -221,6 +231,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         rb.linearVelocity = new Vector2(newVx, rb.linearVelocity.y);
     }
 
+    // Zıplama buffer ve coyote time kontrolüyle zıplamayı uygular
     void ApplyJump()
     {
         bool wantJump = jumpBufferCounter > 0f;
@@ -238,6 +249,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         jumpConsumed = true;
     }
 
+    // Düşerken yerçekimini artırarak daha doğal bir zıplama hissi sağlar
     void ApplyFallGravity()
     {
         if (physicsGrounded || rb.linearVelocity.y >= 0f)
@@ -246,6 +258,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
             rb.gravityScale = fallGravityMultiplier;
     }
 
+    // Hareket yönüne göre sprite'ı sağa veya sola çevirir
     void UpdateFacing(float h)
     {
         if (spriteRenderer == null || Mathf.Abs(h) < 0.01f)
@@ -255,6 +268,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         spriteRenderer.flipX = !facingRight;
     }
 
+    // Hasar alma animasyonunu tetikler
     public void TriggerHit()
     {
         if (dead || animator == null)
@@ -262,6 +276,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         animator.CrossFade("Hit", 0.05f, 0);
     }
 
+    // Oyuncuyu öldürür ve ölüm coroutine'ini başlatır
     public void Die()
     {
         if (dead)
@@ -272,6 +287,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
             deathRoutine = StartCoroutine(DeathRoutine());
     }
 
+    // Ölüm animasyonlarını sırayla oynatır ve fizik simülasyonunu durdurur
     IEnumerator DeathRoutine()
     {
         if (rb != null)
@@ -291,6 +307,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
             rb.simulated = false;
     }
 
+    // Oyuncuyu başlangıç pozisyonuna sıfırlar ve tüm değerleri yeniler
     public void Respawn()
     {
         if (deathRoutine != null)
@@ -327,6 +344,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
             bombDropper.RefillBombs();
     }
 
+    // Oyuncuya hasar verir, iFrame kontrolü yapar ve ölümü tetikler
     public void TakeDamage(int amount)
     {
         if (dead)
@@ -357,6 +375,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         TriggerHit();
     }
 
+    // Oyuncunun canını artırır ve üzerinde yeşil floating text gösterir
     public void Heal(int amount)
     {
         if (dead)
@@ -373,11 +392,13 @@ public sealed class PlayerMovement2D : MonoBehaviour
         SpawnFloatingText("+" + delta, Color.green, transform.position + Vector3.up * 0.6f, floatingTextDuration);
     }
 
+    // Maksimum can değerinin sıfırdan büyük olup olmadığını kontrol eder
     bool HasHealth()
     {
         return maxHealth > 0;
     }
 
+    // Ekrana can barı ve ölüm/yeniden canlanma butonunu çizer
     void OnGUI()
     {
         if (!HasHealth())
@@ -393,6 +414,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         }
     }
 
+    // Hasar alınca sprite'ı kırmızıya çevirir ve sonra eski rengine döndürür
     IEnumerator DamageFlashRoutine()
     {
         if (spriteRenderer == null)
@@ -411,6 +433,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         flashRoutine = null;
     }
 
+    // Oyuncunun üzerinde yükselen hasar/iyileşme yazısı oluşturur
     void SpawnFloatingText(string text, Color color, Vector3 pos, float duration)
     {
         var go = new GameObject("FloatingText");
@@ -426,6 +449,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         StartCoroutine(FloatTextRoutine(tm, pos, duration));
     }
 
+    // Floating text'i yukarı doğru hareket ettirir ve süre dolunca yok eder
     IEnumerator FloatTextRoutine(TextMesh tm, Vector3 startPos, float duration)
     {
         float t = 0f;
