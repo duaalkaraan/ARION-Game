@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -61,9 +63,25 @@ public sealed class PlayerMovement2D : MonoBehaviour
     Coroutine flashRoutine;
     Vector3 spawnPosition;
 
+    public GameObject gameOverPanel;
+
+
     public bool IsDead => dead;
 
     // Bileşenleri başlatır, Rigidbody ayarlarını yapar, canı ve spawn pozisyonunu ayarlar
+
+
+
+    private void Start()
+    {
+       
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+
+    }
+
     void Awake()
     {
         rb = rb ? rb : GetComponent<Rigidbody2D>();
@@ -107,6 +125,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
     // Fizik adımlarını yönetir: zemin kontrolü, hareket, zıplama, yerçekimi ve yön
     void FixedUpdate()
     {
+
         if (dead)
             return;
 
@@ -283,9 +302,14 @@ public sealed class PlayerMovement2D : MonoBehaviour
             return;
 
         dead = true;
-        if (deathRoutine == null)
-            deathRoutine = StartCoroutine(DeathRoutine());
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+        }
+        Debug.Log("Player Died!");
+        Time.timeScale = 0f;
     }
+
 
     // Ölüm animasyonlarını sırayla oynatır ve fizik simülasyonunu durdurur
     IEnumerator DeathRoutine()
@@ -406,12 +430,12 @@ public sealed class PlayerMovement2D : MonoBehaviour
 
         GUI.Label(new Rect(10, 10, 300, 20), $"HP: {currentHealth}/{maxHealth}");
         GUI.Label(new Rect(10, 30, 420, 20), $"Heal (H): +{healAmount}");
-        if (dead)
-        {
-            GUI.Label(new Rect(10, 50, 420, 20), "Öldün");
-            if (GUI.Button(new Rect(10, 75, 140, 30), "Yeniden Canlan"))
-                Respawn();
-        }
+        //if (dead)
+        //{
+        //    GUI.Label(new Rect(10, 50, 420, 20), "Öldün");
+        //    if (GUI.Button(new Rect(10, 75, 140, 30), "Yeniden Canlan"))
+        //        Respawn();
+        //}
     }
 
     // Hasar alınca sprite'ı kırmızıya çevirir ve sonra eski rengine döndürür
@@ -464,4 +488,12 @@ public sealed class PlayerMovement2D : MonoBehaviour
         if (tm != null)
             Destroy(tm.gameObject);
     }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 }
