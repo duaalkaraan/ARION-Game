@@ -105,11 +105,17 @@ public sealed class PlayerMovement2D : MonoBehaviour
     {
         if (iFrameTimer > 0f)
             iFrameTimer -= Time.deltaTime;
+        var kb = Keyboard.current;
+
+        if (dead && kb != null && kb.spaceKey.wasPressedThisFrame)
+        {
+            RestartGame();
+            return;
+        }
 
         if (dead)
             return;
 
-        var kb = Keyboard.current;
         if (kb == null)
             return;
 
