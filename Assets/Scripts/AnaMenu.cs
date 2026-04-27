@@ -11,7 +11,7 @@ public class AnaMenu : MonoBehaviour
     public void OyunuBaslat()
     {
         // "SampleScene" yazan yere kendi oyun sahnenin adýný týrnak içinde yaz!
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
     // 2. VEDA ET BUTONU ÝÇÝN (Paneli açar)
