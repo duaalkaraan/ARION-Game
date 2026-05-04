@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private int collectedItems = 0;
     public TextMeshProUGUI malzemeler;
     public KapiCikisi kapiCikisi;
+    public bool kapiAcik = false;
 
     void Awake()
     {
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
         {
             if (kapiCikisi != null)
                 kapiCikisi.OpenDoor();
+            Debug.Log("Tüm malzemeler toplandı! Kapı açıldı.");
         }
     }
 }

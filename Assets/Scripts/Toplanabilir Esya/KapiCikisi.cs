@@ -8,28 +8,24 @@ public class KapiCikisi : MonoBehaviour
 
     [SerializeField] string sonrakiSahneAdi = "Level2";
     [SerializeField] float gecisGecikmesi = 1f;
-    [SerializeField] Animator kapiAnimator; 
+    [SerializeField] Animator kapiAnimator;
+
     public void OpenDoor()
     {
-        if (isAcik) return;
-        isAcik = true;
-
-        // Animator varsa tetikle, yoksa geç
-        if (kapiAnimator != null)
-            kapiAnimator.SetTrigger("Ac");
-
+        if (GameManager.instance.kapiAcik) return;
+        GameManager.instance.kapiAcik = true;
         Debug.Log("Kapı Açıldı!");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //if (isAcik && other.CompareTag("Player"))
-        //{
-        //    Debug.Log("Level geçiliyor...");
-        //    StartCoroutine(SonrakiLeveleGec());
-        //}
-        Debug.Log("Deneem");
-        StartCoroutine(SonrakiLeveleGec());
+        Debug.Log("Dokunan: " + other.name + " kapiAcik: " + GameManager.instance.kapiAcik);
+
+        if (GameManager.instance.kapiAcik && other.CompareTag("Player"))
+        {
+            Debug.Log("Level geçiliyor...");
+            StartCoroutine(SonrakiLeveleGec());
+        }
     }
 
     private IEnumerator SonrakiLeveleGec()
