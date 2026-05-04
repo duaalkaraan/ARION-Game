@@ -59,8 +59,11 @@ public class YuzmeKontrol : MonoBehaviour
 
     public void SuyaGir()
     {
+        //Debug.LogAssertion("selam");
         suda = true;
-        rb.gravityScale = 0f;
+        //rb.gravityScale = 1f;
+        //rb.angularDamping = 0f;
+        rb.linearVelocityY = -1f;
         mevcutOksijen = maksOksijen;
         if (oksijenBarUI != null)
             oksijenBarUI.gameObject.SetActive(true);
