@@ -7,16 +7,17 @@ public class KeyManager : MonoBehaviour
     public static KeyManager Instance { get; private set; }
 
     [Header("Anahtar UI Slotları")]
-    public Image[] keyUISlots;        // 3 slot
-    public Sprite[] keyPartSprites;   // 3 parça sprite (renkli)
-    public Sprite emptySprite;        // boş/gri sprite
+    public Image[] keyUISlots;
+    public Sprite[] keyPartSprites;
+    public Sprite emptySprite;
 
     [Header("Tamamlanma Efekti")]
-    public Image anahtarTamEkrani;    // tüm anahtar resmi (büyük)
+    public Image anahtarTamEkrani;
     public float parlameHizi = 1.5f;
 
     [Header("Zindan")]
     public GameObject zindanKapisi;
+    public GameObject anahtarKutu;
 
     private bool[] collectedKeys = new bool[3];
 
@@ -28,43 +29,41 @@ public class KeyManager : MonoBehaviour
 
     void Start()
     {
-        // Başlangıçta tüm slotlar gri
         for (int i = 0; i < keyUISlots.Length; i++)
         {
             if (emptySprite != null)
                 keyUISlots[i].sprite = emptySprite;
-            keyUISlots[i].color = new Color(0.4f, 0.4f, 0.4f, 1f); // gri
+            keyUISlots[i].color = new Color(0.4f, 0.4f, 0.4f, 1f);
         }
 
-        // Tamamlanma ekranı gizli
         if (anahtarTamEkrani != null)
         {
             anahtarTamEkrani.gameObject.SetActive(false);
-            anahtarTamEkrani.color = new Color(1f, 1f, 1f, 0f);
+           // anahtarTamEkrani.color = new Color(1f, 1f, 1f, 0f);
         }
+
+        if (anahtarKutu != null)
+            anahtarKutu.SetActive(false);
     }
 
     public void CollectKey(int id)
     {
         if (id < 0 || id >= collectedKeys.Length) return;
-        if (collectedKeys[id]) return; // zaten toplandı
+        if (collectedKeys[id]) return;
 
         collectedKeys[id] = true;
         StartCoroutine(SlotDoldurEfekti(id));
         CheckAllKeysCollected();
     }
 
-    // Slot dolunca küçük zıplama + renk efekti
     IEnumerator SlotDoldurEfekti(int id)
     {
         Image slot = keyUISlots[id];
 
-        // Sprite'ı renkli yap
         if (keyPartSprites != null && keyPartSprites.Length > id)
             slot.sprite = keyPartSprites[id];
         slot.color = Color.white;
 
-        // Zıplama efekti
         Vector3 normalBoyut = slot.transform.localScale;
         Vector3 buyukBoyut = normalBoyut * 1.4f;
 
@@ -90,7 +89,6 @@ public class KeyManager : MonoBehaviour
         foreach (bool key in collectedKeys)
             if (!key) return;
 
-        // Hepsi toplandı!
         StartCoroutine(AnahtarTamamlandiEfekti());
     }
 
@@ -98,58 +96,30 @@ public class KeyManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
 
-        // Büyük anahtar resmi belir
+        // Kutu ve anahtar resmi aynı anda göster
         if (anahtarTamEkrani != null)
-        {
             anahtarTamEkrani.gameObject.SetActive(true);
 
-            // Fade in
-            float sure = 0f;
-            while (sure < 0.5f)
-            {
-                sure += Time.deltaTime;
-                anahtarTamEkrani.color = new Color(1f, 1f, 1f, sure / 0.5f);
-                yield return null;
-            }
+        if (anahtarKutu != null)
+            anahtarKutu.SetActive(true);
 
-            // Parlama efekti — 3 kez
-            for (int i = 0; i < 3; i++)
-            {
-                sure = 0f;
-                while (sure < 0.2f)
-                {
-                    sure += Time.deltaTime;
-                    float parlaklik = Mathf.Lerp(1f, 2f, sure / 0.2f);
-                    anahtarTamEkrani.color = new Color(parlaklik, parlaklik, parlaklik, 1f);
-                    yield return null;
-                }
-                sure = 0f;
-                while (sure < 0.2f)
-                {
-                    sure += Time.deltaTime;
-                    float parlaklik = Mathf.Lerp(2f, 1f, sure / 0.2f);
-                    anahtarTamEkrani.color = new Color(parlaklik, parlaklik, parlaklik, 1f);
-                    yield return null;
-                }
-            }
+        yield return new WaitForSeconds(2f);
 
-            yield return new WaitForSeconds(1f);
-
-            // Fade out
-            sure = 0f;
-            while (sure < 0.4f)
-            {
-                sure += Time.deltaTime;
-                anahtarTamEkrani.color = new Color(1f, 1f, 1f, 1f - (sure / 0.4f));
-                yield return null;
-            }
+        if (anahtarTamEkrani != null)
             anahtarTamEkrani.gameObject.SetActive(false);
-        }
+
+        if (anahtarKutu != null)
+            anahtarKutu.SetActive(false);
 
         // Kapıyı aç
         if (zindanKapisi != null)
-            Destroy(zindanKapisi);
 
         Debug.Log("Zindan kapısı açıldı!");
+    }
+    public bool AreAllKeysCollected()
+    {
+        foreach (bool key in collectedKeys)
+            if (!key) return false;
+        return true;
     }
 }
