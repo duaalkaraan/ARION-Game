@@ -21,6 +21,8 @@ public class KeyManager : MonoBehaviour
 
     private bool[] collectedKeys = new bool[3];
 
+
+
     void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -122,4 +124,11 @@ public class KeyManager : MonoBehaviour
             if (!key) return false;
         return true;
     }
+    public bool IsKeyCollected(int id)
+    {
+        if (id < 0 || id >= collectedKeys.Length) return false;
+        return collectedKeys[id];
+    }   
+
+
 }
