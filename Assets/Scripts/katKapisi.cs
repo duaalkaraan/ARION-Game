@@ -8,7 +8,7 @@ public class katKapisi : MonoBehaviour
     [SerializeField] int gerekliAnahtarID;
 
     [Header("Teleport")]
-    [SerializeField] Transform hedefKonum; // Inspector'dan diğer katın spawn noktasını sürükle
+    [SerializeField] Transform hedefKonum;
 
     [Header("UI")]
     [SerializeField] TextMeshProUGUI ipucuYazisi;
@@ -16,7 +16,7 @@ public class katKapisi : MonoBehaviour
 
     [Header("Sprite")]
     [SerializeField] Sprite kapaliSprite;
-    [SerializeField] Sprite acikSprite;   // açık kapı sprite'ı varsa
+    [SerializeField] Sprite acikSprite;
 
     bool kapıAcik = false;
     bool yakinMi = false;
@@ -40,15 +40,16 @@ public class katKapisi : MonoBehaviour
 
     void SartlariKontrolEt()
     {
+        if (kapıAcik) return; // zaten açıksa tekrar kontrol etme
+
         bool dusmanlarOldu = oldurulenDusmanSayisi >= gerekliDusmanSayisi;
         bool anahtarAlindi = KeyManager.Instance != null &&
                              KeyManager.Instance.IsKeyCollected(gerekliAnahtarID);
 
-        if (dusmanlarOldu && anahtarAlindi && !kapıAcik)
+        if (dusmanlarOldu && anahtarAlindi)
         {
             kapıAcik = true;
 
-            // Sprite varsa değiştir, yoksa renk ver
             if (acikSprite != null)
                 sr.sprite = acikSprite;
             else
@@ -99,11 +100,9 @@ public class katKapisi : MonoBehaviour
             return;
         }
 
-        // Oyuncuyu bul ve taşı
         GameObject oyuncu = GameObject.FindGameObjectWithTag("Player");
         if (oyuncu != null)
         {
-            // Rigidbody varsa velocity sıfırla (kaymasın)
             Rigidbody2D rb = oyuncu.GetComponent<Rigidbody2D>();
             if (rb != null)
                 rb.linearVelocity = Vector2.zero;
@@ -111,9 +110,14 @@ public class katKapisi : MonoBehaviour
             oyuncu.transform.position = hedefKonum.position;
         }
 
-        // Kapıyı kapatmak istersen (isteğe bağlı)
-        // kapıAcik = false;
-        // sr.color = Color.white;
+        // Kapıyı sıfırla
+        kapıAcik = false;
+        yakinMi = false;          // trigger exit tetiklenmeyebilir, elle sıfırla
+        oldurulenDusmanSayisi = 0;
+        sr.color = Color.white;
+
+        if (acikSprite != null && kapaliSprite != null)
+            sr.sprite = kapaliSprite;
 
         if (ipucuKutu != null)
             ipucuKutu.SetActive(false);
