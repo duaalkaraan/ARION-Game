@@ -29,6 +29,9 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
     PlayerMovement2D player;
     float nextAttackTime;
     string lastDesiredState;
+    [Header("Ses")]
+    [SerializeField] AudioClip deathSound;
+    AudioSource audioSource;
     bool dead;
     Coroutine deathRoutine;
 
@@ -39,6 +42,10 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
     // ✔ Enemy bileşenlerini hazırlayan başlangıç metodu
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         animator = animator ? animator : GetComponent<Animator>();
@@ -229,6 +236,8 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
     {
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
+        if (audioSource != null && deathSound != null)
+            audioSource.PlayOneShot(deathSound, 2f);
         if (col != null)
             col.enabled = false;
 

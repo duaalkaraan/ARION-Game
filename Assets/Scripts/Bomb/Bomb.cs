@@ -17,10 +17,17 @@ public sealed class Bomb : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject explosionPrefab;
 
+    [Header("Ses")]
+    [SerializeField] AudioClip explosionSound;
+    AudioSource audioSource;
+
     bool exploded;
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
         animator = animator ? animator : GetComponent<Animator>();
         spriteRenderer = spriteRenderer ? spriteRenderer : GetComponent<SpriteRenderer>();
     }
@@ -35,18 +42,18 @@ public sealed class Bomb : MonoBehaviour
     {
         if (animator != null)
             animator.Play("BombOn", 0, 0f);
-
         yield return new WaitForSeconds(fuseSeconds);
         Explode();
     }
 
     void Explode()
     {
-        if (exploded)
-            return;
+        if (exploded) return;
         exploded = true;
 
-        // Kill in radius
+        if (audioSource != null && explosionSound != null)
+            audioSource.PlayOneShot(explosionSound);
+
         var hits = Physics2D.OverlapCircleAll(transform.position, killRadius, hitMask);
         for (int i = 0; i < hits.Length; i++)
         {
@@ -54,19 +61,15 @@ public sealed class Bomb : MonoBehaviour
             if (c == null) continue;
 
             var player = c.GetComponentInParent<PlayerMovement2D>();
-            if (player != null)
-                player.Die();
+            if (player != null) player.Die();
 
             var enemy = c.GetComponentInParent<EnemyBigGuyAI2D>();
-            if (enemy != null)
-                enemy.Die();
+            if (enemy != null) enemy.Die();
         }
 
-        // Hide bomb sprite
         if (spriteRenderer != null)
             spriteRenderer.enabled = false;
 
-        // Spawn explosion effect
         if (explosionPrefab != null)
         {
             var pos = transform.position;
@@ -75,7 +78,7 @@ public sealed class Bomb : MonoBehaviour
             Destroy(fx, explosionLifetime);
         }
 
-        Destroy(gameObject, 0.05f);
+        Destroy(gameObject, explosionSound != null ? explosionSound.length : 0.05f);
     }
 
     void OnDrawGizmosSelected()
@@ -84,4 +87,3 @@ public sealed class Bomb : MonoBehaviour
         Gizmos.DrawSphere(transform.position, killRadius);
     }
 }
-

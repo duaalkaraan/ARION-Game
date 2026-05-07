@@ -213,3 +213,4 @@ MonoBehaviour:
   animator: {fileID: 9080000000000000006}
   spriteRenderer: {fileID: 9080000000000000005}
   playerTargetOverride: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 95114fdbf229a4e45873dcabc049f82b, type: 3}
