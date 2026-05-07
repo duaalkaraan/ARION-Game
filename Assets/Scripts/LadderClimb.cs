@@ -6,47 +6,57 @@ public class LadderClimb : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
 
     Rigidbody2D rb;
+    Collider2D playerCol;
     bool onLadder;
+    float lockedY;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerCol = GetComponent<Collider2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (!onLadder)
-        {
-            rb.gravityScale = 1f;
-            return;
-        }
+        if (!onLadder) return;
+
+        rb.gravityScale = 0f;
 
         var kb = Keyboard.current;
         if (kb == null) return;
 
-        rb.gravityScale = 0f;
-
-        float v = 0f;
-        if (kb.wKey.isPressed || kb.upArrowKey.isPressed) v = 1f;
-        if (kb.sKey.isPressed || kb.downArrowKey.isPressed) v = -1f;
-
-        if (v != 0f)
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, v * climbSpeed);
+        if (kb.wKey.isPressed || kb.upArrowKey.isPressed)
+        {
+            lockedY = rb.position.y;
+            rb.linearVelocity = new Vector2(0f, climbSpeed);
+            // Týrmanýrken zemin geçiþini aç
+            Physics2D.IgnoreLayerCollision(
+                LayerMask.NameToLayer("Player"),
+                LayerMask.NameToLayer("Ground"), true);
+        }
         else
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.position = new Vector2(rb.position.x, lockedY);
+            // Durduðunda zemin çarpýþmasýný geri aç
+            Physics2D.IgnoreLayerCollision(
+                LayerMask.NameToLayer("Player"),
+                LayerMask.NameToLayer("Ground"), false);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (!other.CompareTag("Ladder")) return;
         onLadder = true;
         rb.gravityScale = 0f;
-        Physics2D.IgnoreLayerCollision(
-            LayerMask.NameToLayer("Player"),
-            LayerMask.NameToLayer("Ground"), true);
+        rb.linearVelocity = Vector2.zero;
+        lockedY = rb.position.y;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
+        if (!other.CompareTag("Ladder")) return;
         onLadder = false;
         rb.gravityScale = 1f;
         Physics2D.IgnoreLayerCollision(

@@ -179,21 +179,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Merdiven (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6161539639057251767, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9825151
+      value: 1.1470864
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2482289
+      value: 1.1653761
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.2745
+      value: -47.49
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.6669
+      value: -22.6
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalPosition.z
@@ -274,7 +278,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.037059084, y: 0}
+  m_Offset: {x: -0.03705907, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -284,7 +288,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0694306, y: 4}
+  m_Size: {x: 1.0694306, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &252323719
 GameObject:
@@ -1242,7 +1246,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.78469545}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1252,7 +1256,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.66, y: 3.9}
+  m_Size: {x: 2.66, y: 2.3306093}
   m_EdgeRadius: 0
 --- !u!1001 &663932954
 PrefabInstance:
@@ -1373,7 +1377,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2481555307746422316, guid: 58ec03900ce2aa54593776d4d02348fd, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3014815196977011251, guid: 58ec03900ce2aa54593776d4d02348fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1415,9 +1419,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3189139263184202711, guid: 58ec03900ce2aa54593776d4d02348fd, type: 3}
+      propertyPath: m_Size.y
+      value: 2.5267842
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189139263184202711, guid: 58ec03900ce2aa54593776d4d02348fd, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.68660796
+      objectReference: {fileID: 0}
     - target: {fileID: 3835690982143235289, guid: 58ec03900ce2aa54593776d4d02348fd, type: 3}
       propertyPath: m_Name
       value: "kap\u0131"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957541080726929984, guid: 58ec03900ce2aa54593776d4d02348fd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11804,13 +11820,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Merdiven
       objectReference: {fileID: 0}
+    - target: {fileID: 6161539639057251767, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1587092
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3409451
+      value: 1.269875
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11818,7 +11838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.358
+      value: -25.2158
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11899,7 +11919,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.015712857, y: 0}
+  m_Offset: {x: 0.015712857, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11909,7 +11929,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0315075, y: 4}
+  m_Size: {x: 1.0315075, y: 2}
   m_EdgeRadius: 0
 --- !u!1001 &1516293658
 PrefabInstance:
@@ -12357,6 +12377,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 810866048}
+    - target: {fileID: 9010000000000000007, guid: 9e0f1a2b3c4d5e6f708192a3b4c5d6e7, type: 3}
+      propertyPath: airAcceleration
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: 9010000000000000008, guid: 9e0f1a2b3c4d5e6f708192a3b4c5d6e7, type: 3}
       propertyPath: bombPrefab
       value: 
@@ -12406,7 +12430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::YuzmeKontrol
   yuzmeHizi: 4
-  maksOksijen: 5
+  maksOksijen: 100
   oksijenBarUI: {fileID: 1308398050}
 --- !u!114 &1862107658 stripped
 MonoBehaviour:
@@ -12435,13 +12459,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Merdiven (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6161539639057251767, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1571932
+      value: 1.1572716
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3270773
+      value: 1.2204056
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12449,7 +12477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.45
+      value: -21.2367
       objectReference: {fileID: 0}
     - target: {fileID: 6310937030965649534, guid: f8c0689d8d9fded4bb48d413d5085903, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12530,7 +12558,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.017557293, y: 0}
+  m_Offset: {x: 0.017557263, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12540,7 +12568,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0888679, y: 4}
+  m_Size: {x: 1.0888679, y: 2}
   m_EdgeRadius: 0
 --- !u!1001 &1880936074
 PrefabInstance:
@@ -12617,7 +12645,7 @@ GameObject:
   - component: {fileID: 2016806354}
   m_Layer: 0
   m_Name: Deniz
-  m_TagString: Untagged
+  m_TagString: deniz
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

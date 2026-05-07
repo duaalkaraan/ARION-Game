@@ -1,0 +1,1365 @@
+fileFormatVersion: 2
+guid: a304f42581780c345b8fa960609c819c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 60766241268121278
+    second: Arion-UI_0
+  - first:
+      213: 8188896547615039865
+    second: Arion-UI_1
+  - first:
+      213: 4263549387749869140
+    second: Arion-UI_2
+  - first:
+      213: 1346867526810187188
+    second: Arion-UI_3
+  - first:
+      213: -3022807862374004650
+    second: Arion-UI_4
+  - first:
+      213: -5418507908612292819
+    second: Arion-UI_5
+  - first:
+      213: 7127147802128436877
+    second: Arion-UI_6
+  - first:
+      213: 5202963561227875654
+    second: Arion-UI_7
+  - first:
+      213: -9048548458381395289
+    second: Arion-UI_8
+  - first:
+      213: -2111046928563556854
+    second: Arion-UI_9
+  - first:
+      213: -1865513332760232406
+    second: Arion-UI_10
+  - first:
+      213: -1563083739517493195
+    second: Arion-UI_11
+  - first:
+      213: 6266705345234717012
+    second: Arion-UI_12
+  - first:
+      213: -2899301803842221300
+    second: Arion-UI_13
+  - first:
+      213: 7900603469871781316
+    second: Arion-UI_14
+  - first:
+      213: 2956438901599648904
+    second: Arion-UI_15
+  - first:
+      213: 3269285566936125442
+    second: Arion-UI_16
+  - first:
+      213: 841111083110621054
+    second: Arion-UI_17
+  - first:
+      213: 7227924506388784892
+    second: Arion-UI_18
+  - first:
+      213: 1059381355474352556
+    second: Arion-UI_19
+  - first:
+      213: -52525950537370490
+    second: Arion-UI_20
+  - first:
+      213: -8484830655630222058
+    second: Arion-UI_21
+  - first:
+      213: -4497702732503937642
+    second: Arion-UI_22
+  - first:
+      213: -2171117319417917034
+    second: Arion-UI_23
+  - first:
+      213: 5263560044997033997
+    second: Arion-UI_24
+  - first:
+      213: -1713390358676093447
+    second: Arion-UI_25
+  - first:
+      213: 984708217706293448
+    second: Arion-UI_26
+  - first:
+      213: -2552733438279745604
+    second: Arion-UI_27
+  - first:
+      213: -3454078671450114623
+    second: Arion-UI_28
+  - first:
+      213: -4248129422013636150
+    second: Arion-UI_29
+  - first:
+      213: -3981755868530449768
+    second: Arion-UI_30
+  - first:
+      213: -6884701651510900347
+    second: Arion-UI_31
+  - first:
+      213: -6707529592162390124
+    second: Arion-UI_32
+  - first:
+      213: 4550252585685975188
+    second: Arion-UI_33
+  - first:
+      213: 4908208455604433669
+    second: Arion-UI_34
+  - first:
+      213: -7239431092669784891
+    second: Arion-UI_35
+  - first:
+      213: -6231227656956134913
+    second: Arion-UI_36
+  - first:
+      213: 4276879994005928334
+    second: Arion-UI_37
+  - first:
+      213: 6158958021232580952
+    second: Arion-UI_38
+  - first:
+      213: -6936684896275266782
+    second: Arion-UI_39
+  - first:
+      213: 2557455961149985018
+    second: Arion-UI_40
+  - first:
+      213: 1092705896234929493
+    second: Arion-UI_41
+  - first:
+      213: 916703429972344709
+    second: Arion-UI_42
+  - first:
+      213: -4440560376864937068
+    second: Arion-UI_43
+  - first:
+      213: 3707016380820168035
+    second: Arion-UI_44
+  - first:
+      213: 6697870131652946104
+    second: Arion-UI_45
+  - first:
+      213: 7303408489595574495
+    second: Arion-UI_46
+  - first:
+      213: -2454945451142370607
+    second: Arion-UI_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Arion-UI_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1685
+        width: 142
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebe3f111392e7d000800000000000000
+      internalID: 60766241268121278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_1
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1685
+        width: 132
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 971640ff50ec4a170800000000000000
+      internalID: 8188896547615039865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_2
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 1685
+        width: 144
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4564a23349b2b2b30800000000000000
+      internalID: 4263549387749869140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_3
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 1685
+        width: 140
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5b70f21e801b210800000000000000
+      internalID: 1346867526810187188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_4
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 1675
+        width: 262
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65880f2c344dc06d0800000000000000
+      internalID: -3022807862374004650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_5
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 1675
+        width: 262
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ff48ef3c79dc4b0800000000000000
+      internalID: -5418507908612292819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_6
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 1675
+        width: 270
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e429f2a27b8e260800000000000000
+      internalID: 7127147802128436877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_7
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1413
+        width: 142
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645f94edac3a43840800000000000000
+      internalID: 5202963561227875654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_8
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1415
+        width: 142
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aab44d4e191d6280800000000000000
+      internalID: -9048548458381395289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_9
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 1413
+        width: 138
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e2ac6d00e04b2e0800000000000000
+      internalID: -2111046928563556854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_10
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 1413
+        width: 140
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e321df18d5c16e0800000000000000
+      internalID: -1865513332760232406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_11
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1403
+        width: 254
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530eed7de9fce4ae0800000000000000
+      internalID: -1563083739517493195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_12
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 1403
+        width: 256
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459c1ce1f4fc7f650800000000000000
+      internalID: 6266705345234717012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_13
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 1403
+        width: 172
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0bc55dde5c93c7d0800000000000000
+      internalID: -2899301803842221300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_14
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1143
+        width: 324
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c51de42ff494ad60800000000000000
+      internalID: 7900603469871781316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_15
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1113
+        width: 158
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c3ef16481670920800000000000000
+      internalID: 2956438901599648904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_16
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 919
+        width: 35
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2001a86d6e5de5d20800000000000000
+      internalID: 3269285566936125442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_17
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 917
+        width: 68
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7fd37dd21a3cab00800000000000000
+      internalID: 841111083110621054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_18
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 919
+        width: 86
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf6e4aa1b0fbe4460800000000000000
+      internalID: 7227924506388784892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_19
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 919
+        width: 144
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca978bedabda3be00800000000000000
+      internalID: 1059381355474352556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_20
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 1123
+        width: 82
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684fab02de3654ff0800000000000000
+      internalID: -52525950537370490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_21
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1123
+        width: 156
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61dd0d72973df3a80800000000000000
+      internalID: -8484830655630222058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_22
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 1123
+        width: 156
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d8cc3d133f491c0800000000000000
+      internalID: -4497702732503937642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_23
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 1123
+        width: 160
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69195621d44aed1e0800000000000000
+      internalID: -2171117319417917034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_24
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 1123
+        width: 164
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d00ccff29fbeb0940800000000000000
+      internalID: 5263560044997033997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_25
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1041
+        width: 324
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f54885fb80d838e0800000000000000
+      internalID: -1713390358676093447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_26
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 917
+        width: 156
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c8aac328e26aad00800000000000000
+      internalID: 984708217706293448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_27
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 913
+        width: 156
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbff21d767ed29cd0800000000000000
+      internalID: -2552733438279745604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_28
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 917
+        width: 152
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c576f1bfb5a010d0800000000000000
+      internalID: -3454078671450114623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_29
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 917
+        width: 324
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1edf85ccc9b05c0800000000000000
+      internalID: -4248129422013636150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_30
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 851
+        width: 266
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8926ae14226fdb8c0800000000000000
+      internalID: -3981755868530449768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_31
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 831
+        width: 16
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 589c52d1350a470a0800000000000000
+      internalID: -6884701651510900347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_32
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 831
+        width: 100
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f6dbabf511ae2a0800000000000000
+      internalID: -6707529592162390124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_33
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 831
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4908d105e9eb52f30800000000000000
+      internalID: 4550252585685975188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_34
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 831
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503fed7e5957d1440800000000000000
+      internalID: 4908208455604433669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_35
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 595
+        width: 134
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ccdf7107cf588b90800000000000000
+      internalID: -7239431092669784891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_36
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 447
+        width: 266
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff93a80e57b3689a0800000000000000
+      internalID: -6231227656956134913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_37
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 629
+        width: 188
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89b2b5d1b78a5b30800000000000000
+      internalID: 4276879994005928334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_38
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 633
+        width: 150
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8595c1250b3097550800000000000000
+      internalID: 6158958021232580952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_39
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 631
+        width: 228
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22302b6c6d1fbbf90800000000000000
+      internalID: -6936684896275266782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_40
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 595
+        width: 250
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0dc0d85a8ed7320800000000000000
+      internalID: 2557455961149985018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_41
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 591
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55dce0529321a2f00800000000000000
+      internalID: 1092705896234929493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_42
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 537
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f32e3a9e8c8bc00800000000000000
+      internalID: 916703429972344709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_43
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 529
+        width: 268
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b6a454dd5ff52c0800000000000000
+      internalID: -4440560376864937068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_44
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 537
+        width: 232
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d175bf1c7f17330800000000000000
+      internalID: 3707016380820168035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_45
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 57
+        width: 698
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b86fdcd56d93fc50800000000000000
+      internalID: 6697870131652946104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_46
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 57
+        width: 260
+        height: 460
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd89aef735bea5560800000000000000
+      internalID: 7303408489595574495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arion-UI_47
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 83
+        width: 370
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1daa2b97e184eedd0800000000000000
+      internalID: -2454945451142370607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4c62b6ce0a35fa742a91a2e18484f1c0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Arion-UI_0: 60766241268121278
+      Arion-UI_1: 8188896547615039865
+      Arion-UI_10: -1865513332760232406
+      Arion-UI_11: -1563083739517493195
+      Arion-UI_12: 6266705345234717012
+      Arion-UI_13: -2899301803842221300
+      Arion-UI_14: 7900603469871781316
+      Arion-UI_15: 2956438901599648904
+      Arion-UI_16: 3269285566936125442
+      Arion-UI_17: 841111083110621054
+      Arion-UI_18: 7227924506388784892
+      Arion-UI_19: 1059381355474352556
+      Arion-UI_2: 4263549387749869140
+      Arion-UI_20: -52525950537370490
+      Arion-UI_21: -8484830655630222058
+      Arion-UI_22: -4497702732503937642
+      Arion-UI_23: -2171117319417917034
+      Arion-UI_24: 5263560044997033997
+      Arion-UI_25: -1713390358676093447
+      Arion-UI_26: 984708217706293448
+      Arion-UI_27: -2552733438279745604
+      Arion-UI_28: -3454078671450114623
+      Arion-UI_29: -4248129422013636150
+      Arion-UI_3: 1346867526810187188
+      Arion-UI_30: -3981755868530449768
+      Arion-UI_31: -6884701651510900347
+      Arion-UI_32: -6707529592162390124
+      Arion-UI_33: 4550252585685975188
+      Arion-UI_34: 4908208455604433669
+      Arion-UI_35: -7239431092669784891
+      Arion-UI_36: -6231227656956134913
+      Arion-UI_37: 4276879994005928334
+      Arion-UI_38: 6158958021232580952
+      Arion-UI_39: -6936684896275266782
+      Arion-UI_4: -3022807862374004650
+      Arion-UI_40: 2557455961149985018
+      Arion-UI_41: 1092705896234929493
+      Arion-UI_42: 916703429972344709
+      Arion-UI_43: -4440560376864937068
+      Arion-UI_44: 3707016380820168035
+      Arion-UI_45: 6697870131652946104
+      Arion-UI_46: 7303408489595574495
+      Arion-UI_47: -2454945451142370607
+      Arion-UI_5: -5418507908612292819
+      Arion-UI_6: 7127147802128436877
+      Arion-UI_7: 5202963561227875654
+      Arion-UI_8: -9048548458381395289
+      Arion-UI_9: -2111046928563556854
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
