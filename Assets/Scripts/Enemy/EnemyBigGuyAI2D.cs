@@ -222,6 +222,10 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
         dead = true;
         if (deathRoutine == null)
             deathRoutine = StartCoroutine(DeathRoutine());
+        // Die() metodunda, Destroy'dan önce ekle:
+        katKapisi kapı = FindObjectOfType<katKapisi>();
+        if (kapı != null)
+            kapı.DusmanOlduruldu();
     }
 
     // ✔ Ölüm animasyonlarını oynatır ve enemy’yi sahneden kaldırır
@@ -244,6 +248,6 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    
 
 }
