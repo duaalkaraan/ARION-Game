@@ -6,6 +6,12 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public sealed class EnemyBigGuyAI2D : MonoBehaviour
 {
+    [Header("Ses Efektleri")]
+    // Bomba patlama sesi için
+    [SerializeField] private AudioClip patlamaSesi;
+    // Korsanın bağırma sesi için
+    [SerializeField] private AudioClip olumCigligi; 
+
     [Header("Hareket")]
     [SerializeField] float moveSpeed = 4.5f;
     [SerializeField] float attackRange = 1.4f;
@@ -234,6 +240,14 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
     // ✔ Ölüm animasyonlarını oynatır ve enemy’yi sahneden kaldırır
     IEnumerator DeathRoutine()
     {
+        Vector3 sesPozisyonu = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z + 1f);
+
+        if (patlamaSesi != null)
+            AudioSource.PlayClipAtPoint(patlamaSesi, sesPozisyonu);
+
+        if (olumCigligi != null)
+            AudioSource.PlayClipAtPoint(olumCigligi, sesPozisyonu);
+
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
         if (audioSource != null && deathSound != null)

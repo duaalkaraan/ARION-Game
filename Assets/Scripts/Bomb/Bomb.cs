@@ -75,7 +75,28 @@ public sealed class Bomb : MonoBehaviour
             var pos = transform.position;
             pos.z = 0f;
             var fx = Instantiate(explosionPrefab, pos, Quaternion.identity);
+            // Try to play AudioSource on the spawned effect (preferred)
+            var fxAudio = fx.GetComponent<AudioSource>();
+            if (fxAudio != null)
+            {
+                fxAudio.Play();
+            }
+            else
+            {
+                // Fallback: find global audio manager and play explosion clip
+                var audioManager = FindObjectOfType<AudioManager>();
+                if (audioManager != null)
+                    audioManager.PlayExplosion();
+            }
+
             Destroy(fx, explosionLifetime);
+        }
+        else
+        {
+            // No prefab: try global audio manager
+            var audioManager = FindObjectOfType<AudioManager>();
+            if (audioManager != null)
+                audioManager.PlayExplosion();
         }
 
         Destroy(gameObject, explosionSound != null ? explosionSound.length : 0.05f);

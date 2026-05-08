@@ -33,6 +33,8 @@ public sealed class PlayerMovement2D : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip deathClip;
 
     static readonly int IdleStateHash = Animator.StringToHash("Idle");
     static readonly int RunStateHash = Animator.StringToHash("Run");
@@ -87,6 +89,7 @@ public sealed class PlayerMovement2D : MonoBehaviour
         rb = rb ? rb : GetComponent<Rigidbody2D>();
         animator = animator ? animator : GetComponent<Animator>();
         spriteRenderer = spriteRenderer ? spriteRenderer : GetComponent<SpriteRenderer>();
+        audioSource = audioSource ? audioSource : GetComponent<AudioSource>();
         col = GetComponent<Collider2D>();
 
         rb.gravityScale = 1f;
@@ -263,11 +266,6 @@ public sealed class PlayerMovement2D : MonoBehaviour
         if (!wantJump)
             return;
 
-        if (coyoteCounter <= 0f)
-            return;
-        if (jumpConsumed)
-            return;
-
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         coyoteCounter = 0f;
         jumpBufferCounter = 0f;
@@ -313,7 +311,48 @@ public sealed class PlayerMovement2D : MonoBehaviour
             gameOverPanel.SetActive(true);
         }
         Debug.Log("Player Died!");
+
+        // Play death sound and then pause the game. Ensure background music keeps playing.
+        if (deathClip != null)
+        {
+            if (audioSource != null)
+            {
+                audioSource.ignoreListenerPause = true;
+                audioSource.PlayOneShot(deathClip);
+                StartCoroutine(DeathPauseAfterSoundRoutine(audioSource, deathClip.length, false));
+            }
+            else
+            {
+                // Create a temporary audio source so the clip plays even if the player's GameObject is paused or destroyed
+                var temp = new GameObject("DeathSound");
+                temp.transform.position = transform.position;
+                var src = temp.AddComponent<AudioSource>();
+                src.clip = deathClip;
+                src.spatialBlend = 0f;
+                src.ignoreListenerPause = true;
+                src.Play();
+                StartCoroutine(DeathPauseAfterSoundRoutine(src, deathClip.length, true));
+            }
+        }
+        else
+        {
+            // No clip assigned - pause immediately
+            Time.timeScale = 0f;
+        }
+    }
+
+    // Waits for the death sound to finish in real time, then pauses the game. If destroyTemp is true, destroys the temporary audio source GameObject.
+    IEnumerator DeathPauseAfterSoundRoutine(AudioSource src, float length, bool destroyTemp)
+    {
+        // Wait in real time so audio plays even if Time.timeScale changes
+        yield return new WaitForSecondsRealtime(Mathf.Max(0.01f, length));
+
         Time.timeScale = 0f;
+
+        if (destroyTemp && src != null)
+        {
+            Destroy(src.gameObject);
+        }
     }
 
 
