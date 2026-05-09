@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 3779908559275191731, guid: 7868cb50b933ea14abeec4909eec8676, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -137,7 +137,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.81, y: 11.03}
+  m_Size: {x: 2, y: 3}
   m_EdgeRadius: 0
 --- !u!50 &8577208340229420332
 Rigidbody2D:
@@ -180,5 +180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::katKapisi
   gerekliDusmanSayisi: 2
   gerekliAnahtarID: 0
-  ipucuYazisi: {fileID: 0}
+  hedefKonum: {fileID: 0}
   ipucuKutu: {fileID: 0}
+  ipucuYazisi: {fileID: 0}
+  kapaliSprite: {fileID: 0}
+  acikSprite: {fileID: 0}

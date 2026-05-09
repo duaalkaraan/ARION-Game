@@ -67,6 +67,11 @@ public class KeyManager : MonoBehaviour
         // Slot dolma animasyonunu başlat
         StartCoroutine(SlotDoldurEfekti(id));
 
+        katKapisi kapi = FindObjectOfType<katKapisi>();
+        if (kapi != null)
+            kapi.SartlariKontrolEt(); 
+
+
         // Tüm anahtarlar toplandı mı kontrol et
         CheckAllKeysCollected();
     }

@@ -12,8 +12,9 @@ public class katKapisi : MonoBehaviour
     [SerializeField] Transform hedefKonum;          // Oyuncunun ışınlanacağı konum
 
     [Header("UI")]
-    [SerializeField] TextMeshProUGUI ipucuYazisi;   // Ekranda gösterilecek ipucu metni
     [SerializeField] GameObject ipucuKutu;           // İpucu metninin arka plan kutusu
+    [SerializeField] TextMeshProUGUI ipucuYazisi;   // Ekranda gösterilecek ipucu metni
+
 
     [Header("Sprite")]
     [SerializeField] Sprite kapaliSprite;            // Kapı kapalıyken görsel
@@ -31,8 +32,8 @@ public class katKapisi : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         // İpucu kutusunu başlangıçta gizle
-        if (ipucuKutu != null)
-            ipucuKutu.SetActive(false);
+        if (ipucuYazisi != null)
+            ipucuYazisi.transform.parent.gameObject.SetActive(false);
     }
 
     // Düşman öldürüldüğünde dışarıdan çağrılır
@@ -43,7 +44,7 @@ public class katKapisi : MonoBehaviour
     }
 
     // Kapının açılma şartlarını kontrol eder
-    void SartlariKontrolEt()
+    public void SartlariKontrolEt()
     {
         // Kapı zaten açıksa tekrar kontrol etme
         if (kapıAcik) return;
@@ -66,11 +67,7 @@ public class katKapisi : MonoBehaviour
             else
                 sr.color = new Color(0f, 1f, 0f, 0.8f);
 
-            // Oyuncu yakındaysa ipucu metnini güncelle
-            if (yakinMi && ipucuYazisi != null)
-                ipucuYazisi.text = "Kapı açık! [Space] Geç";
-
-            Debug.Log("Kapı açık! Geçebilirsin.");
+            
         }
     }
 
@@ -143,9 +140,9 @@ public class katKapisi : MonoBehaviour
         if (acikSprite != null && kapaliSprite != null)
             sr.sprite = kapaliSprite;
 
-        // İpucu kutusunu gizle
-        if (ipucuKutu != null)
-            ipucuKutu.SetActive(false);
+        //// İpucu kutusunu gizle
+        //if (ipucuKutu != null)
+        //    ipucuKutu.SetActive(false);
     }
 
     // Oyuncu kapıya girdiğinde çalışır
@@ -155,13 +152,27 @@ public class katKapisi : MonoBehaviour
         {
             yakinMi = true;
 
-            // İpucu kutusunu göster
-            if (ipucuKutu != null)
-                ipucuKutu.SetActive(true);
-
-            // Kapı durumuna göre ipucu metnini ayarla
             if (ipucuYazisi != null)
-                ipucuYazisi.text = kapıAcik ? "Kapı açık! [Space] Geç" : "[Space] Kapıyı Aç";
+            {
+                ipucuYazisi.transform.parent.gameObject.SetActive(true);
+
+                if (kapıAcik)
+                    ipucuYazisi.text = "Kapi acik! [Space] Diger kata gec";
+                else
+                {
+                    bool dusmanlarOldu = oldurulenDusmanSayisi >= gerekliDusmanSayisi;
+                    bool anahtarAlindi = KeyManager.Instance != null &&
+                                         KeyManager.Instance.IsKeyCollected(gerekliAnahtarID);
+
+                    string mesaj = "";
+                    if (!dusmanlarOldu)
+                        mesaj += "Tum dusmanlari oldur! ";
+                    if (!anahtarAlindi)
+                        mesaj += "Anahtar parcasini topla!";
+
+                    ipucuYazisi.text = mesaj;
+                }
+            }
         }
     }
 
@@ -173,8 +184,8 @@ public class katKapisi : MonoBehaviour
             yakinMi = false;
 
             // İpucu kutusunu gizle
-            if (ipucuKutu != null)
-                ipucuKutu.SetActive(false);
+            if (ipucuYazisi != null)
+                ipucuYazisi.transform.parent.gameObject.SetActive(false);
         }
     }
 }
