@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnaMenu
   onayPaneli: {fileID: 1818452933}
-  ayarlarPaneli: {fileID: 0}
+  ayarlarPaneli: {fileID: 209268236}
 --- !u!4 &167074379
 Transform:
   m_ObjectHideFlags: 0
@@ -600,17 +600,17 @@ RectTransform:
   m_GameObject: {fileID: 209268236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.20000003, y: 0.40000007, z: 0.30000004}
+  m_LocalScale: {x: 0.521037, y: 1.042074, z: 0.7815555}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1204567341}
   - {fileID: 1676310278}
-  m_Father: {fileID: 2123550975}
+  m_Father: {fileID: 673497849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4, y: 7.700012}
-  m_SizeDelta: {x: 294.201, y: 100.621}
+  m_AnchoredPosition: {x: 0, y: 20.059929}
+  m_SizeDelta: {x: 411.201, y: 326.021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &209268238
 MonoBehaviour:
@@ -1712,6 +1712,7 @@ RectTransform:
   m_Children:
   - {fileID: 1233054939}
   - {fileID: 1299831250}
+  - {fileID: 209268237}
   m_Father: {fileID: 2123550975}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6010,7 +6011,6 @@ RectTransform:
   - {fileID: 872905636}
   - {fileID: 334231602}
   - {fileID: 673497849}
-  - {fileID: 209268237}
   - {fileID: 1121041412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

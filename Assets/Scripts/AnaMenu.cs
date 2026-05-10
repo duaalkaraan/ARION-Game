@@ -4,51 +4,50 @@ using UnityEngine.SceneManagement;
 public class AnaMenu : MonoBehaviour
 {
     [Header("Paneller")]
-    public GameObject onayPaneli;    // "Rafi esir" yazan çýkýþ onay paneli
-    public GameObject ayarlarPaneli; // Eðer yaptýysan ayarlar paneli
+    public GameObject onayPaneli;
+    public GameObject ayarlarPaneli;
 
-    // 1. MACERAYA BAÞLA BUTONU ÝÇÝN
+    // --- YENÝ EKLENEN KISIM: ANA MENÜYE DÖNÜÞ ---
+    public void AnaMenuyeDon()
+    {
+        // Ana menü sahnenin adý hiyerarþide neyse onu yaz (Genelde "AnaMenu")
+        SceneManager.LoadScene("AnaMenu");
+    }
+    // ------------------------------------------
+
     public void OyunuBaslat()
     {
-        // "SampleScene" yazan yere kendi oyun sahnenin adýný týrnak içinde yaz!
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("level_01");
     }
 
-    // 2. VEDA ET BUTONU ÝÇÝN (Paneli açar)
     public void OnayPaneliniAc()
     {
         onayPaneli.SetActive(true);
-        if (ayarlarPaneli != null) ayarlarPaneli.SetActive(false); // Ayarlar açýksa kapatýr
+        if (ayarlarPaneli != null) ayarlarPaneli.SetActive(false);
     }
 
-    // 3. HAYIR / VAZGEÇ BUTONU ÝÇÝN (Paneli kapatýr)
     public void Vazgec()
     {
         onayPaneli.SetActive(false);
     }
 
-    // 4. EVET / ÇIKIÞ BUTONU ÝÇÝN (Oyunu kapatýr)
     public void TamamenCik()
     {
-        Debug.Log("Oyun kapatýlýyor... (Bu yazý Console'da çýkýyorsa kod çalýþýyor demektir)");
-
-        // Gerçek oyun dosyasýnda (Build) kapatýr
+        Debug.Log("Oyun kapatýlýyor...");
         Application.Quit();
 
-        // Unity Editor içindeyken Play modunu durdurur (Test etmek için)
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
 
-    // 5. AYARLAR BUTONU ÝÇÝN (Opsiyonel)
     public void AyarlariAc()
     {
-        ayarlarPaneli.SetActive(true);
+        if (ayarlarPaneli != null) ayarlarPaneli.SetActive(true);
     }
 
     public void AyarlariKapat()
     {
-        ayarlarPaneli.SetActive(false);
+        if (ayarlarPaneli != null) ayarlarPaneli.SetActive(false);
     }
 }
