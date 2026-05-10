@@ -17,7 +17,7 @@ public class AnaMenu : MonoBehaviour
 
     public void OyunuBaslat()
     {
-        SceneManager.LoadScene("level_01");
+        SceneManager.LoadScene("level_1");
     }
 
     public void OnayPaneliniAc()
