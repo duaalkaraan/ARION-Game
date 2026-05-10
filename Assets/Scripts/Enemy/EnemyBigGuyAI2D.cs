@@ -251,7 +251,7 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
         if (audioSource != null && deathSound != null)
-            audioSource.PlayOneShot(deathSound, 2f);
+            audioSource.PlayOneShot(deathSound, 3f);
         if (col != null)
             col.enabled = false;
 
