@@ -1,99 +1,110 @@
 using System.Collections;
 using UnityEngine;
 
-[DisallowMultipleComponent] // Aynı objeye 2 kez eklenemez
-public sealed class Bomb : MonoBehaviour // sealed = miras alınamaz
+[DisallowMultipleComponent]
+public sealed class Bomb : MonoBehaviour
 {
     [Header("Zamanlama")]
-    [SerializeField] float fuseSeconds = 3f;        // Fitil süresi - kaç saniye sonra patlasın
-    [SerializeField] float explosionLifetime = 0.8f; // Patlama efektinin ekranda kalma süresi
+    [SerializeField] float fuseSeconds = 3f;
+    [SerializeField] float explosionLifetime = 0.8f;
 
     [Header("Hasar Alanı")]
-    [SerializeField] float killRadius = 2.2f;        // Patlama yarıçapı (birim)
-    [SerializeField] LayerMask hitMask = ~0;         // Hangi layerlara hasar versin (~0 = hepsi)
+    [SerializeField] float killRadius = 2.2f;
+    [SerializeField] LayerMask hitMask = ~0;
 
     [Header("Görsel")]
-    [SerializeField] Animator animator;              // Fitil animasyonu
-    [SerializeField] SpriteRenderer spriteRenderer;  // Bomba görseli
-    [SerializeField] GameObject explosionPrefab;     // Patlama efekti prefab'ı
+    [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] GameObject explosionPrefab;
 
-    bool exploded; // Bomba patladı mı? (çift patlama önlemi)
+    [Header("Ses")]
+    [SerializeField] AudioClip explosionSound;
+    AudioSource audioSource;
 
-    // Oyun başlamadan önce bileşenleri al
+    bool exploded;
+
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
         animator = animator ? animator : GetComponent<Animator>();
         spriteRenderer = spriteRenderer ? spriteRenderer : GetComponent<SpriteRenderer>();
     }
 
-    // Bomba aktif olduğunda çalışır (Instantiate veya SetActive sonrası)
     void OnEnable()
     {
-        exploded = false;           // Patlama durumunu sıfırla
-        StartCoroutine(FuseRoutine()); // Fitil geri sayımını başlat
+        exploded = false;
+        StartCoroutine(FuseRoutine());
     }
 
-    // Fitil geri sayımı - fuseSeconds kadar bekleyip patlatır
     IEnumerator FuseRoutine()
     {
-        // Fitil animasyonunu başlat (BombOn state'i)
         if (animator != null)
             animator.Play("BombOn", 0, 0f);
-
-        // Fitil süresi kadar bekle
         yield return new WaitForSeconds(fuseSeconds);
-
-        // Süre doldu - patlat!
         Explode();
     }
 
-    // Bombanın patlama mantığı
     void Explode()
     {
-        // Zaten patladıysa tekrar çalışma
         if (exploded) return;
         exploded = true;
 
-        // Patlama yarıçapındaki tüm collider'ları bul
-        var hits = Physics2D.OverlapCircleAll(transform.position, killRadius, hitMask);
+        if (audioSource != null && explosionSound != null)
+            audioSource.PlayOneShot(explosionSound);
 
+        var hits = Physics2D.OverlapCircleAll(transform.position, killRadius, hitMask);
         for (int i = 0; i < hits.Length; i++)
         {
             var c = hits[i];
             if (c == null) continue;
 
-            // Oyuncu yakalandıysa öldür
             var player = c.GetComponentInParent<PlayerMovement2D>();
-            if (player != null)
-                player.Die();
+            if (player != null) player.Die();
 
-            // Büyük düşman yakalandıysa öldür
             var enemy = c.GetComponentInParent<EnemyBigGuyAI2D>();
-            if (enemy != null)
-                enemy.Die();
+            if (enemy != null) enemy.Die();
         }
 
-        // Bomba görselini gizle (patlama efekti görünsün diye)
         if (spriteRenderer != null)
             spriteRenderer.enabled = false;
 
-        // Patlama efekti oluştur ve belirli süre sonra sil
         if (explosionPrefab != null)
         {
             var pos = transform.position;
-            pos.z = 0f; // 2D için Z'yi sıfırla
+            pos.z = 0f;
             var fx = Instantiate(explosionPrefab, pos, Quaternion.identity);
-            Destroy(fx, explosionLifetime); // Efekti 0.8 saniye sonra sil
+            // Try to play AudioSource on the spawned effect (preferred)
+            var fxAudio = fx.GetComponent<AudioSource>();
+            if (fxAudio != null)
+            {
+                fxAudio.Play();
+            }
+            else
+            {
+                // Fallback: find global audio manager and play explosion clip
+                var audioManager = FindObjectOfType<AudioManager>();
+                if (audioManager != null)
+                    audioManager.PlayExplosion();
+            }
+
+            Destroy(fx, explosionLifetime);
+        }
+        else
+        {
+            // No prefab: try global audio manager
+            var audioManager = FindObjectOfType<AudioManager>();
+            if (audioManager != null)
+                audioManager.PlayExplosion();
         }
 
-        // Bomba objesini 0.05 saniye sonra sil (efektin başlamasına izin ver)
-        Destroy(gameObject, 0.05f);
+        Destroy(gameObject, explosionSound != null ? explosionSound.length : 0.05f);
     }
 
-    // Editor'da seçiliyken patlama alanını görselleştirir (oyunda görünmez)
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = new Color(1f, 0.3f, 0.1f, 0.35f); // Yarı saydam turuncu
-        Gizmos.DrawSphere(transform.position, killRadius); // Yarıçapı göster
+        Gizmos.color = new Color(1f, 0.3f, 0.1f, 0.35f);
+        Gizmos.DrawSphere(transform.position, killRadius);
     }
 }

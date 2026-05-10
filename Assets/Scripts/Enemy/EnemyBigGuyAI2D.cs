@@ -6,6 +6,12 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public sealed class EnemyBigGuyAI2D : MonoBehaviour
 {
+    [Header("Ses Efektleri")]
+    // Bomba patlama sesi için
+    [SerializeField] private AudioClip patlamaSesi;
+    // Korsanın bağırma sesi için
+    [SerializeField] private AudioClip olumCigligi; 
+
     [Header("Hareket")]
     [SerializeField] float moveSpeed = 4.5f;
     [SerializeField] float attackRange = 1.4f;
@@ -29,9 +35,9 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
     PlayerMovement2D player;
     float nextAttackTime;
     string lastDesiredState;
-    [Header("Kat Kapısı")]
-    [SerializeField] katKapisi bagliKapi;
-
+    [Header("Ses")]
+    [SerializeField] AudioClip deathSound;
+    AudioSource audioSource;
     bool dead;
     Coroutine deathRoutine;
 
@@ -42,6 +48,10 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
     // ✔ Enemy bileşenlerini hazırlayan başlangıç metodu
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         animator = animator ? animator : GetComponent<Animator>();
@@ -223,10 +233,6 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
             return;
 
         dead = true;
-
-        if (bagliKapi != null)
-            bagliKapi.DusmanOlduruldu();
-
         if (deathRoutine == null)
             deathRoutine = StartCoroutine(DeathRoutine());
     }
@@ -234,8 +240,18 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
     // ✔ Ölüm animasyonlarını oynatır ve enemy’yi sahneden kaldırır
     IEnumerator DeathRoutine()
     {
+        Vector3 sesPozisyonu = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z + 1f);
+
+        if (patlamaSesi != null)
+            AudioSource.PlayClipAtPoint(patlamaSesi, sesPozisyonu);
+
+        if (olumCigligi != null)
+            AudioSource.PlayClipAtPoint(olumCigligi, sesPozisyonu);
+
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
+        if (audioSource != null && deathSound != null)
+            audioSource.PlayOneShot(deathSound, 3f);
         if (col != null)
             col.enabled = false;
 
@@ -250,7 +266,4 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         Destroy(gameObject);
     }
-    
-   
- 
 }
