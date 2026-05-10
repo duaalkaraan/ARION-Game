@@ -879,7 +879,7 @@ MonoBehaviour:
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
+  m_VolumeTrigger: {fileID: 1308398049}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
@@ -11897,8 +11897,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: 309}
-  m_SizeDelta: {x: 125.02, y: 18.993}
+  m_AnchoredPosition: {x: -882, y: 303}
+  m_SizeDelta: {x: 111.802, y: 18.993}
   m_Pivot: {x: 0.50000006, y: 0.5000001}
 --- !u!114 &1308398050
 MonoBehaviour:
@@ -12883,8 +12883,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::YuzmeKontrol
   yuzmeHizi: 4
-  maksOksijen: 100
-  oksijentBarUI: {fileID: 0}
+  maksOksijen: 10
+  oksijentBarUI: {fileID: 1308398050}
 --- !u!114 &1862107658 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9010000000000000007, guid: 9e0f1a2b3c4d5e6f708192a3b4c5d6e7, type: 3}

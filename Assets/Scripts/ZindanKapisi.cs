@@ -7,6 +7,12 @@ public class ZindanKapisi : MonoBehaviour
     // Ekranda gösterilecek ipucu metni
     [SerializeField] TextMeshProUGUI ipucuYazisi;
 
+    // ✅ Rafi'nin SpriteRenderer'ı - Inspector'dan bağla
+    [SerializeField] SpriteRenderer rafiSprite;
+
+    // ✅ Mutlu Rafi görseli - Inspector'dan Assets'teki mutluRAFİ'yi sürükle
+    [SerializeField] Sprite mutluRafiSprite;
+
     // Oyuncu kapıya yakın mı?
     bool yakinMi = false;
 
@@ -14,31 +20,31 @@ public class ZindanKapisi : MonoBehaviour
     void Start()
     {
         if (ipucuYazisi != null)
-            ipucuYazisi.transform.parent.gameObject.SetActive(false); // İpucu kutusunun parent'ını gizle
+            ipucuYazisi.transform.parent.gameObject.SetActive(false);
     }
 
     // Her frame çalışır
     void Update()
     {
-        // Oyuncu yakında değilse hiçbir şey yapma
         if (!yakinMi) return;
 
-        // Space tuşuna basıldıysa
         if (UnityEngine.InputSystem.Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            // Tüm anahtarlar toplandıysa kapıyı aç
             if (KeyManager.Instance != null && KeyManager.Instance.AreAllKeysCollected())
             {
                 // İpucu kutusunu gizle
                 if (ipucuYazisi != null)
                     ipucuYazisi.transform.parent.gameObject.SetActive(false);
 
-                // Kapı objesini sahneden sil (kapı açıldı)
+                // ✅ Rafi'yi mutlu yap
+                if (rafiSprite != null && mutluRafiSprite != null)
+                    rafiSprite.sprite = mutluRafiSprite;
+
+                // Kapıyı sil
                 Destroy(gameObject);
             }
             else
             {
-                // Anahtarlar eksikse uyarı mesajı göster
                 if (ipucuYazisi != null)
                 {
                     ipucuYazisi.transform.parent.gameObject.SetActive(true);
@@ -55,7 +61,6 @@ public class ZindanKapisi : MonoBehaviour
         {
             yakinMi = true;
 
-            // İpucu kutusunu göster ve mesajı ayarla
             if (ipucuYazisi != null)
             {
                 ipucuYazisi.transform.parent.gameObject.SetActive(true);
@@ -71,7 +76,6 @@ public class ZindanKapisi : MonoBehaviour
         {
             yakinMi = false;
 
-            // İpucu kutusunu gizle
             if (ipucuYazisi != null)
                 ipucuYazisi.transform.parent.gameObject.SetActive(false);
         }
