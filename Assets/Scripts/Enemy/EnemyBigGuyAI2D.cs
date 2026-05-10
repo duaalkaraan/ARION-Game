@@ -29,6 +29,9 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
     PlayerMovement2D player;
     float nextAttackTime;
     string lastDesiredState;
+    [Header("Kat Kapısı")]
+    [SerializeField] katKapisi bagliKapi;
+
     bool dead;
     Coroutine deathRoutine;
 
@@ -220,6 +223,10 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
             return;
 
         dead = true;
+
+        if (bagliKapi != null)
+            bagliKapi.DusmanOlduruldu();
+
         if (deathRoutine == null)
             deathRoutine = StartCoroutine(DeathRoutine());
     }
@@ -243,7 +250,7 @@ public sealed class EnemyBigGuyAI2D : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         Destroy(gameObject);
     }
-
-
-
+    
+   
+ 
 }
